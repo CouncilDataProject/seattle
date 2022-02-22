@@ -1,0 +1,12 @@
+default_context:
+    municipality: "Seattle"
+    governing_body_type: "city council"
+    municipality_slug: "seattle"
+    python_municipality_slug: "seattle"
+    infrastructure_slug: "cdp-seattle-21723dcf"
+    maintainer_or_org_full_name: "Council Data Project Contributors"
+    hosting_github_username_or_org: "CouncilDataProject"
+    hosting_github_repo_name: "seattle"
+    hosting_github_url: "https://github.com/CouncilDataProject/seattle"
+    hosting_web_app_address: "https://CouncilDataProject.github.io/seattle"
+    firestore_region: "us-central"

@@ -1,0 +1,71 @@
+name: Event Gather
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+    # Run every day at 0,6,12,18:26:00 UTC
+    # We offset from the hour and half hour to go easy on the servers :)
+    - cron: '26 0,6,12,18 * * *'
+  workflow_dispatch:
+    inputs:
+      from:
+        description: "Optional ISO formatted string for datetime to begin event gather from."
+        required: false
+        default: ""  # Will get converted to N (default 2) days prior
+      to:
+        description: "Optional ISO formatted string for datetime to end event gather at."
+        required: false
+        default: ""  # Will get converted to now
+
+
+jobs:
+  process-events:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+
+    - name: Install Packages
+      run: |
+        sudo apt update
+        sudo apt-get install ffmpeg --fix-missing
+
+    - name: Install Python Dependencies
+      run: |
+        cd python/
+        pip install .
+
+    - name: Setup gcloud
+      uses: google-github-actions/setup-gcloud@master
+      with:
+        project_id: cdp-seattle-21723dcf
+        service_account_key: ${{ secrets.GOOGLE_CREDENTIALS }}
+        export_default_credentials: true
+
+    - name: Dump Credentials to JSON
+      run: |
+        echo "$GOOGLE_CREDS" > python/google-creds.json
+      env:
+        GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDENTIALS }}
+
+    - name: Gather and Process New Events - CRON
+      if: ${{ github.event_name == 'schedule' }}
+      run: |
+        cd python/
+        run_cdp_event_gather event-gather-config.json --parallel
+    
+    - name: Gather and Process Requested Events - Manual
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        cd python/
+        run_cdp_event_gather event-gather-config.json \
+          --from ${{ github.event.inputs.from }} \
+          --to ${{ github.event.inputs.to }} \
+          --parallel
