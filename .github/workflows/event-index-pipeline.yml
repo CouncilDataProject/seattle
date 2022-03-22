@@ -27,7 +27,7 @@ jobs:
         python-version: 3.9
 
     - name: Setup gcloud
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@v0
       with:
         project_id: cdp-seattle-21723dcf
         service_account_key: ${{ secrets.GOOGLE_CREDENTIALS }}
