@@ -11,3 +11,5 @@ default_context:
     hosting_github_url: "https://github.com/CouncilDataProject/seattle"
     hosting_web_app_address: "https://CouncilDataProject.github.io/seattle"
     firestore_region: "us-central"
+    event_gather_timedelta_lookback_days: 2
+    event_gather_cron: "29 3,15 * * *"
