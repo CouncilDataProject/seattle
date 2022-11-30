@@ -3,14 +3,6 @@ name: Event Index
 on:
   workflow_dispatch:
 
-  schedule:
-    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
-    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
-    # Run every Thursday at 3:26:00 UTC
-    # (Thursday at 19:26:00 PST)
-    # We offset from the hour and half hour to go easy on the servers :)
-    - cron: '26 3 * * 4'
-
 # We doubly fan out
 # We first generate indexs for uni, bi, and trigrams with a matrix
 # Each index is split into chunks of 50,000 grams
