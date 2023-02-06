@@ -1,2 +1,0 @@
-(this["webpackJsonpcdp-seattle"]=this["webpackJsonpcdp-seattle"]||[]).push([[0],{206:function(e,t){},91:function(e,t,n){"use strict";n.r(t);n(0);var i=n(26),s=n.n(i),c=n(66),o=(n(220),n(58));s.a.render(Object(o.jsx)("div",{children:Object(o.jsx)(c.AppConfigProvider,{appConfig:{firebaseConfig:{options:{projectId:"cdp-seattle-21723dcf"},settings:{}},municipality:{name:"Seattle",timeZone:"America/Los_Angeles",footerLinksSections:[]}},children:Object(o.jsx)(c.App,{})})}),document.getElementById("root"))}},[[91,1,2]]]);
-//# sourceMappingURL=main.0bfb2e16.chunk.js.map
