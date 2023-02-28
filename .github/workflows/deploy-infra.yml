@@ -54,7 +54,7 @@ jobs:
         export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/google-creds.json
         just deploy \
           cdp-seattle-21723dcf \
-          $(pwd)/../cookiecutter.yaml \
+          $(pwd)/../cookiecutter.yaml
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
