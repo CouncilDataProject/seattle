@@ -15,3 +15,6 @@ default_context:
     event_gather_cron: "29 3 * * *"
     enable_clipping: "true"
     speech_to_text_model_version: "large"
+    event_gather_runner_timeout_minutes: "15"
+    event_gather_runner_max_attempts: "4"
+    event_gather_runner_retry_wait_seconds: "600"
