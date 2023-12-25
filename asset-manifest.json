@@ -5,16 +5,16 @@
     "runtime-main.js": "/seattle/static/js/runtime-main.dea1b004.js",
     "runtime-main.js.map": "/seattle/static/js/runtime-main.dea1b004.js.map",
     "static/css/2.bd5b6b7e.chunk.css": "/seattle/static/css/2.bd5b6b7e.chunk.css",
-    "static/js/2.196af8f9.chunk.js": "/seattle/static/js/2.196af8f9.chunk.js",
-    "static/js/2.196af8f9.chunk.js.map": "/seattle/static/js/2.196af8f9.chunk.js.map",
+    "static/js/2.d37c215d.chunk.js": "/seattle/static/js/2.d37c215d.chunk.js",
+    "static/js/2.d37c215d.chunk.js.map": "/seattle/static/js/2.d37c215d.chunk.js.map",
     "index.html": "/seattle/index.html",
     "static/css/2.bd5b6b7e.chunk.css.map": "/seattle/static/css/2.bd5b6b7e.chunk.css.map",
-    "static/js/2.196af8f9.chunk.js.LICENSE.txt": "/seattle/static/js/2.196af8f9.chunk.js.LICENSE.txt"
+    "static/js/2.d37c215d.chunk.js.LICENSE.txt": "/seattle/static/js/2.d37c215d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dea1b004.js",
     "static/css/2.bd5b6b7e.chunk.css",
-    "static/js/2.196af8f9.chunk.js",
+    "static/js/2.d37c215d.chunk.js",
     "static/js/main.c4dcb965.chunk.js"
   ]
 }
